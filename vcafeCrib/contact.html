@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charset="UTF-8">
+        <title>V-cafeCrib</title>
+        <meta name = "viewport" content = "width=device-width, initial-scale = 1.0">
+        <!--
+        <link rel = "stylesheet" href = "https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700,700i,900,900i" >
+        <link rel = "stylesheet" href = "styles/-reset.css">
+       
+        <link rel = "stylesheet" href = "styles/-article.css">
+        -->
+        
+        <link rel = "stylesheet" href = "styles/contact.css">
+    </head>
+
+    <body>
+        
+        <article> 
+            <div class = "main">
+                <div class = "wrapper">
+                    <div class = "header"> 
+                        <nav>
+                            <div class = "logo"> 
+                                <img src =  "images/logo2.png" alt = "Logo">
+                            </div>
+                            <ul> 
+                                <li> <a href = "index.html" > HOME </a></li>
+                                <li> <a href = "about.html" > ABOUT US </a></li>
+                                <li> <a href = "menu.html" >  MENU </a></li>
+                                <li> <a href = "contact.html" > CONTACT </a></li>
+                              <!--  <  <li> <a href = "" > BUSINESS PLAN </a></li> -->
+                             </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+    
+           </article>
+             
+           <center>
+           <div class = "header1">
+           <div class = "debug-center">
+            <div class = "contactbox">
+
+               <form onsubmit="sendEmail (); reset(); return false;"> 
+                <input type = "text" class = "input-field" placeholder="Your Name">
+                <input type = "email" class = "input-field" placeholder="Your Email">
+                <input type = "text" class = "input-field" placeholder="Subject">
+                <textarea type = "text" class = "input-field textarea-field" placeholder = "Your Message"></textarea>
+                <button type = "submit" class = "btn"> Send Message</button>
+               </form>
+
+               </div>
+
+            </div>
+        </div>
+    </center>
+
+    <script src = "https://smtpjs.com/v3/smtp.js"> </script>
+    <script>
+        function sendEmail () {
+            Email.send({
+            Host : "smtp.yourisp.com",
+            Username : "username",
+            Password : "password",
+            To : 'them@website.com',
+            From : "you@isp.com",
+            Subject : "This is the subject",
+            Body : "And this is the body"
+        }).then(
+            message => alert(message)
+        );
+        }
+    </script>
+    </body>
